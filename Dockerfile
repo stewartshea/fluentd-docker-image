@@ -1,5 +1,5 @@
 FROM fluent/fluentd:onbuild
-MAINTAINER YOUR_NAME <...@...>
+MAINTAINER shea stewart <stewart.shea@gmail.com>
 
 USER root
 
@@ -9,6 +9,7 @@ RUN apk add --update --virtual .build-deps \
  # cutomize following instruction as you wish
  && sudo -u fluent gem install \
         fluent-plugin-secure-forward \
+ && sudo -u fluent gem install fluent-plugin-splunk-ex \
 
  && sudo -u fluent gem sources --clear-all \
  && apk del .build-deps \
