@@ -32,6 +32,8 @@ RUN chown -R fluent:fluent /home/fluent
 RUN mkdir -p /fluentd/log
 # configuration/plugins path (default: copied from .)
 RUN mkdir -p /fluentd/etc /fluentd/plugins
+RUN  fluent gem install fluent-plugin-secure-forward \
+    && fluent gem install fluent-plugin-splunk-ex \
 
 RUN chown -R fluent:fluent /fluentd
 
