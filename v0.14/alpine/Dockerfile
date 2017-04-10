@@ -23,6 +23,7 @@ RUN apk update \
  && gem install fluentd -v 0.14.14 \
  && gem install fluent-plugin-secure-forward \
  && gem install fluent-plugin-splunk-ex \
+ && gem install fluent-plugin-elasticsearch \ 
  && apk del .build-deps \
  && rm -rf /var/cache/apk/* \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
